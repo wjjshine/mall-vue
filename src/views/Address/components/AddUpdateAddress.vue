@@ -3,7 +3,7 @@
     <popup v-model="visible" height="100%" :popup-style="{zIndex:501}" @on-show="open" @on-hide="resetFrom">
       <div class="vux-header">
         <div class="vux-header-left" @click="close">
-          <a class="vux-header-back">返回 </a><div class="left-arrow"></div>
+          <a class="vux-header-back">返回</a><div class="left-arrow"></div>
         </div>
         <h1 class="vux-header-title"><span>{{adData ? '编辑地址':'新增地址'}}</span></h1>
       </div>

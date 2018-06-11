@@ -1,4 +1,4 @@
-# vw-layout
+# mall-vux
 
 > A Vue.js project
 
