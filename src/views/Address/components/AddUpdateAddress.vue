@@ -97,28 +97,29 @@ export default {
     },
     submit () {
       if (!(this.$refs.name.valid && this.$refs.phone.valid && this.from.areaId.length > 0 && this.$refs.detailAddress.valid)) {
-        this.SHOW_TOAST({show: true, msg: '请正确填写表单', type: 'warn'})
+        // this.SHOW_TOAST({show: true, msg: '请正确填写表单', type: 'warn'})
+        this.$vux.toast.show({text: '请正确填写表单', type: 'warn'})
         return true
       }
-      // this.from.ofUser = this.user._id
+      this.from.ofUser = this.user._id
       this.adData ? this.update() : this.add()
     },
     async add () {
       this.from.isDefault = false
       await this.$store.dispatch('address/add', this.from).catch(err => {
-        this.$vux.toast.show(err)
+        this.$vux.toast.show({text: err, type: 'warn'})
         throw err
       })
-      this.$vux.toast.show()
+      this.$vux.toast.show({text: '成功'})
       this.close()
       this.$emit('refresh-page')
     },
     async update () {
       await this.$store.dispatch('address/update', this.from).catch(err => {
-        this.$vux.toast.show(err)
+        this.$vux.toast.show({text: err, type: 'warn'})
         throw err
       })
-      this.$vux.toast.show()
+      this.$vux.toast.show({text: '成功'})
       this.close()
       this.$emit('refresh-page')
     },

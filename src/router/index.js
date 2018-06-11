@@ -18,9 +18,13 @@ router.beforeEach((to, from, next) => {
     })
     return
   }
+  if (to.path === '/') {
+    next({path: '/home'})
+  } else {
+    next()
+  }
   // loading
   // store.commit('UPDATE_LOADING', true)
-  next()
 })
 
 router.afterEach(function (to) {

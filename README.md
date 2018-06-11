@@ -1,6 +1,6 @@
-# mall-vux
+# mall-vue
 
-> A Vue.js project
+> A vue.js mall project ，vux .
 
 ## Build Setup
 

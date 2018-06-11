@@ -1,7 +1,7 @@
 {
-  "name": "mall-vux",
+  "name": "mall-vue",
   "version": "1.0.0",
-  "description": "vux-mall-project",
+  "description": "vue mall project, use vux .",
   "author": "王晶晶 <wjj314719457@gmail.com>",
   "private": true,
   "scripts": {

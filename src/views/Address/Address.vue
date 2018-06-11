@@ -102,9 +102,10 @@ export default {
           index: this.currentAddressIndex
         }
         await this.$store.dispatch('address/deleteAddress', data).catch(err => {
+          this.$vux.toast.show({text: err, type: 'warn'})
           throw err
         })
-        this.$vux.toast.show()
+        this.$vux.toast.show({text: '成功'})
       }
     }
   }
