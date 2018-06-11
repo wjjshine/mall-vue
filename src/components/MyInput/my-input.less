@@ -1,0 +1,47 @@
+@import "~@/styles/variable";
+
+  .my-input {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+    &__error {
+      position: absolute;
+      left: 0;
+      top: 70px;
+      color: #f74913;
+      font-size: 24px;
+    }
+    input {
+      width: 100%;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #8fa1b3;
+      border-radius: 0;
+      height: 70px;
+      line-height: 70px;
+      color: #262f38;
+      padding: 0 5px;
+      font-size: 30px;
+      &.success {
+        border-color: #4eb940;
+      }
+      &.error {
+        border-color: #f74913;
+      }
+      &::-webkit-input-placeholder {
+        font-size: 30px;
+        color: #b3bcc7;
+      }
+      &.code {
+        padding-right: 300px;
+      }
+    }
+  }
+
+  .get-code {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: @text-mid;
+  }

@@ -1,0 +1,124 @@
+// 默认字体Color
+@font-default-color:#263240;
+// 中灰色
+@medium-grey-color:#8492a6;
+@light-grey-color:#bdc5d0;
+// 边框
+@border-color:#e9edf2;
+
+@background-color:#f5f5f5;
+
+@primary-color: #1875f0;
+@info-color: #003d9c;
+@success-color: #13ce66;
+@warning-color: #f7ba2a;
+@error-color: #e64340;
+@purple-color:#9474dc;
+
+
+.border-radius (@radius: 4px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+.border-radius-t-l (@radius: 4px) {
+  -webkit-border-top-left-radius: @radius;
+  -moz-border-top-left-radius: @radius;
+  -ms-border-top-left-radius: @radius;
+  -o-border-top-left-radius: @radius;
+  border-top-left-radius: @radius;
+}
+.border-radius-t-r (@radius: 4px) {
+  -webkit-border-top-right-radius: @radius;
+  -moz-border-top-right-radius: @radius;
+  -ms-border-top-right-radius: @radius;
+  -o-border-top-right-radius: @radius;
+  border-top-right-radius: @radius;
+}
+.border-radius-b-l (@radius: 4px) {
+  -webkit-border-bottom-left-radius: @radius;
+  -moz-border-bottom-left-radius: @radius;
+  -ms-border-bottom-left-radius: @radius;
+  -o-border-bottom-left-radius: @radius;
+  border-bottom-left-radius: @radius;
+}
+.border-radius-b-r (@radius: 4px) {
+  -webkit-border-bottom-right-radius: @radius;
+  -moz-border-bottom-right-radius: @radius;
+  -ms-border-bottom-right-radius: @radius;
+  -o-border-bottom-right-radius: @radius;
+  border-bottom-right-radius: @radius;
+}
+// Shadow
+.box-shadow(@x:0,@y:0,@blur:4px,@color:rgba(0,0,0,0.08)){ 
+  -moz-box-shadow: @arguments; 
+  -webkit-box-shadow: @arguments; 
+  box-shadow: @arguments; 
+  } 
+ .box-shadow-inset(@x:0,@y:0,@blur:4px,@color:rgba(0,0,0,0.08)){ 
+     -moz-box-shadow: @arguments inset; 
+     -webkit-box-shadow: @arguments inset; 
+     box-shadow: @arguments inset; 
+ } 
+ // Flex
+ .flex-container {
+   display: -webkit-box;  /* 老版本语法: Safari 3.1-6,  iOS 6-, Android browser, older WebKit browsers.  */
+   display: -moz-box;    /* 老版本语法: Firefox 19- (buggy but mostly works) */
+   display: -ms-flexbox;  /* 混合版本语法: IE 10 */
+   display: -webkit-flex;  /* 新版本语法： Chrome 21+ */
+   display: flex;       /* 新版本语法： Opera 12.1, Firefox 22+ */
+ }
+ .flex-inline-container {
+     display: -webkit-inline-flex; /*webkit*/
+     display:inline-flex;
+ }
+ .flex(@grow:1){
+     -webkit-box-flex: @grow;      /* OLD - iOS 6-, Safari 3.1-6 */
+     -moz-box-flex: @grow;         /* OLD - Firefox 19- */
+     -webkit-flex: @grow;          /* Chrome */
+     -ms-flex: @grow;              /* IE 10 */
+     flex: @grow;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+ }
+ .flex-direction(@d:column){
+   -webkit-flex-direction: @d;
+     -moz-flex-direction: @d;
+     -ms-flex-direction: @d;
+     -o-flex-direction: @d;
+     flex-direction: @d;
+ }
+ .flex-j-c(@j:center;){
+   -webkit-justify-content: @j;
+     -moz-justify-content: @j;
+     -ms-justify-content: @j;
+     -o-justify-content: @j;
+     justify-content: @j;
+ }
+ .flex-a-i(@a:center){-webkit-align-items: @a;
+     -moz-align-items: @a;
+     -ms-align-items: @a;
+     -o-align-items: @a;
+     align-items: @a;
+ }
+ .flex-center{.flex-container;.flex-j-c;.flex-a-i}
+ .vm{display: inline-block;vertical-align: middle;}
+
+.text-default {
+  color: @font-default-color;
+}
+.text-primary {
+  color: @primary-color;
+}
+.text-error{
+  color: @error-color;
+}
+.text-grey {
+  color: @medium-grey-color;
+  &.has-hover {
+    &:hover {
+      color: @font-default-color;
+      cursor: pointer;
+    }
+  }
+}
