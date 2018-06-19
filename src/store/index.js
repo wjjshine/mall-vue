@@ -1,16 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import publicStore from '@views/public/store'
+import home from '@views/Home/store'
+import user from '@views/User/store'
+import cart from '@views/Cart/store'
+import order from '@views/Order/store'
+import address from '@views/Address/store'
+import classify from '@views/Classify/store'
 
 Vue.use(Vuex)
 
-/** get modules */
-let modules = {}
-const modulesFilse = require.context('../views', true, /\.store.js$/)
-modulesFilse.keys().forEach(key => { // key:./Public/store/public.store.js
-  let fileName = key.split(/(\.\/)/)[2] // Public/store/public.store.js
-  const keyName = fileName.split(/\//)[2].split('.')[0] // keyName:public
-  modules[keyName] = require('../views/' + fileName).default
-})
+let modules = {
+  public: publicStore,
+  home,
+  user,
+  cart,
+  order,
+  address,
+  classify
+}
 
 const state = {
   isLoading: false,

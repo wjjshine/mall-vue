@@ -26,6 +26,7 @@
         </li>
       </template>
     </ul>
+    <Empty :visible="!(addressList && addressList.length>0)"/>
     <div class="address-footer">
       <x-button type="warn" @click.native="addAddress">添加新地址</x-button>
     </div>

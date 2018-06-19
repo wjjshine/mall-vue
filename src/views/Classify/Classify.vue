@@ -8,8 +8,8 @@
       </ul>
     </div>
     <div class="classify-content">
-      <grid :cols="2" :show-lr-borders="false" :show-vertical-dividers="false">
-        <grid-item  v-for="(item,index) in currentMenu.productList" :key="index" :link="{ path: '/product/detail'}">
+      <grid :cols="2" :show-lr-borders="false" :show-vertical-dividers="false" v-if="currentClassify.productList && currentClassify.productList.length>0">
+        <grid-item  v-for="(item,index) in currentClassify.productList" :key="index" :link="{ path: '/product/detail'}">
           <img slot="icon" :src="item.imgUrl">
           <template slot="label">
             <div class="product-name">{{item.name}}</div>
@@ -17,6 +17,7 @@
           </template>
         </grid-item>
       </grid>
+      <empty :visible="!(currentClassify.productList && currentClassify.productList.length>0)"></empty>
     </div>
   </div>
 </template>
@@ -25,7 +26,7 @@ import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      currentMenu: {},
+      currentClassify: {},
       currentIndex: 0
     }
   },
@@ -42,12 +43,12 @@ export default {
       await this.$store.dispatch('classify/getClassifyList').catch(err => {
         console.log(err)
       })
-      this.currentMenu = this.classifyList[0]
+      this.currentClassify = this.classifyList[0]
       this.currentIndex = 0
     },
     changeMenu (index) {
       this.currentIndex = index
-      this.currentMenu = this.classifyList.find((v, i) => {
+      this.currentClassify = this.classifyList.find((v, i) => {
         return i === index
       })
     }

@@ -6,7 +6,7 @@
       <div class="home-product-box__title">
         <img src="../../assets/home/selected.png" >
       </div>
-      <grid :show-lr-borders="false">
+      <grid :cols="2" :show-lr-borders="false">
         <grid-item v-for="(item,index) in selectedList" :key="index" :link="{ path: '/product/detail'}" >
           <i class="iconfont mall-icon-cart product-cart" @click.stop="addCart(item)"></i>
           <img slot="icon" :src="item.imgUrl">

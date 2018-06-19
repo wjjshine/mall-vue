@@ -8,14 +8,16 @@ const getters = {
   selectedList: state => {
     let list = state.selectedList
     list.forEach(item => {
-      item.imgUrl = require(`../../../assets/product/${item.id}.png`)
+      // item.imgUrl = require(`../../../assets/product/${item.id}.png`)
+      item.imgUrl = require(`../../../assets/product/5af441c1N1af45077.png`)
     })
     return list
   },
   billboardList: state => {
     let list = state.billboardList
     list.forEach(item => {
-      item.imgUrl = require(`../../../assets/product/${item.id}.png`)
+      // item.imgUrl = require(`../../../assets/product/${item.id}.png`)
+      item.imgUrl = require(`../../../assets/product/5af441c1N1af45077.png`)
     })
     return list
   }

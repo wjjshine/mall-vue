@@ -11,10 +11,12 @@ import lodash from 'lodash'
 import './styles/variable.less'
 import './styles/index.less'
 import filter from './utils/filter'
+import Empty from './components/Empty'
 
 // Vue.use(MyInput)
 Vue.use(AlertPlugin)
 Vue.use(ToastPlugin)
+Vue.use(Empty)
 
 Vue.component('x-input', XInput)
 Vue.component('x-button', XButton)
